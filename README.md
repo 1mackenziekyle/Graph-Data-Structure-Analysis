@@ -16,20 +16,20 @@ A graph is a suitable representation of the interaction between different users.
 
 ### Task1.1:
 
-Implement a directed weighted graph as a rich form oc capturing email interactions. The number of emails between any users A and B must be captured, as well as email times. This must be able to be constructed in either of the following ways:
+Implement a directed weighted graph as a rich form of capturing email interactions. The number of emails between any users A and B must be captured, as well as email times. This must be able to be constructed in either of the following ways:
 
-1.           Using an **input file** (similar in format to the one provided to you) and a **time window** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```). Only email interactions that occurred in this window should be stored in the object, where the time window is inclusive. If no time window is provided, all email interactions in the file should be included.
-2.           From another ```InteractionGraph``` object and a **time range filter** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```) Note that the time window for the resulting object would be the intersection of input time range filter and the input object’s.
-3.           From another ```InteractionGraph``` object and an int array containing **user IDs**. The returning ```InteractionGraph``` should only contain interactions of these users. Note that not all requested users are guaranteed to be in the input ```InteractionGraph``` object. Interactions should be added to the new graph as long as either the sender or the reciver is in the specified array, or both.
+1.            Using an **input file** (similar in format to the one provided to you) and a **time window** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```). Only email interactions that occurred in this window should be stored in the object, where the time window is inclusive. If no time window is provided, all email interactions in the file should be included.
+2.            From another ```InteractionGraph``` object and a **time range filter** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```) Note that the time window for the resulting object would be the intersection of input time range filter and the input object’s.
+3.            From another ```InteractionGraph``` object and an int array containing **user IDs**. The returning ```InteractionGraph``` should only contain interactions of these users. Note that not all requested users are guaranteed to be in the input ```InteractionGraph``` object. Interactions should be added to the new graph as long as either the sender or the reciver is in the specified array, or both.
 
 ### Task 1.2:
 
 Create an undirected weighted graph of user interactions within a specific time. Assuming two users A and B, undirected means emails from A to B are not differentiated from those sent from B to A, and weighted means that the total number of emails between A to B should be captured. This class should also capture email times, as certain analyses would rely on it. An object of this class should be constructed in one of the following ways:
 
-1.           Using an **input file** (similar in format to the one provided to you) and a **time window** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```).
-2.           From another ```UDWInteractionGraph``` object and a **time range filter** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```) Again, this time window should be checked to fit in the time window associated with the input object, where the time range is inclusive.
-3.           From another ```UDWInteractionGraph``` object and an int array containing **user IDs**. The returning ```UDWInteractionGraph``` should only contain interactions of these users. Interactions should be added to the new graph as long as either the sender or the reciver is in the specified array, or both.
-4.           From an ```InteractionGraph```. Here, the ```InteractionGraph``` should be translated into a ```UDWInteractionGraph```.
+1.            Using an **input file** (similar in format to the one provided to you) and a **time window** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```).
+2.            From another ```UDWInteractionGraph``` object and a **time range filter** (int array of length two: ```[StartTimeInSeconds, EndTimeInSeconds]```) Again, this time window should be checked to fit in the time window associated with the input object, where the time range is inclusive.
+3.            From another ```UDWInteractionGraph``` object and an int array containing **user IDs**. The returning ```UDWInteractionGraph``` should only contain interactions of these users. Interactions should be added to the new graph as long as either the sender or the reciver is in the specified array, or both.
+4.            From an ```InteractionGraph```. Here, the ```InteractionGraph``` should be translated into a ```UDWInteractionGraph```.
 
 **Note 1**: Part of solving this task is deciding a suitable data structure for holding data of a `DWInteractionGraph` or a `UDWInteractionGraph`. There are two common ways to represent a graph: using an [adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix), or an [adjacency list](https://en.wikipedia.org/wiki/Adjacency_list). Depending on the graph, one could be better than the other in terms of speed or memory usage. Your ability to finish Task 4 and pass tests in a reasonable time may depend on choosing the representation better suited to this problem.
 
